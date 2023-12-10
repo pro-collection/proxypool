@@ -1,7 +1,7 @@
 package main
 
 import (
-	"errors"
+	"proxypool/pkg/getter"
 	log "unknwon.dev/clog/v2"
 )
 
@@ -27,13 +27,15 @@ func init() {
 }
 
 func main() {
-	err := errors.New("错误信息")
+	//err := errors.New("错误信息")
+	//
+	//log.Trace("Hello %s!", "World")
+	//log.Info("Hello %s!", "World")
+	//log.Warn("Hello %s!", "World")
+	//log.Error("So bad... %v", err)
+	//log.Fatal("Boom! %v", err)
 
-	log.Trace("Hello %s!", "World")
-	log.Info("Hello %s!", "World")
-	log.Warn("Hello %s!", "World")
-	log.Error("So bad... %v", err)
-	log.Fatal("Boom! %v", err)
+	getter.IP89()
 
 	defer log.Stop()
 }
