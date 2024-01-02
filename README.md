@@ -107,6 +107,7 @@ func main() {
 本质上来说， 本地去访问公开的 IP 代理池网站， 获取别人的 HTML 模板， 从里面提取 IP 信息
 
 ### 定义 IP 结构体
+首先先统一一下我们 IP 的结构体
 
 对应目录：
 ```
@@ -137,7 +138,7 @@ type IP struct {
 }
 ```
 
-实例化一个 IP 结构体 `pkg/models/ip.go`：
+给一个实例化一个 IP 的函数 `pkg/models/ip.go`：
 ```go
 package models
 
@@ -236,3 +237,6 @@ func main() {
 ```
 执行结果如下：
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5fb12019741b45cabdd72600881b0d6c~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2402&h=1590&s=439722&e=png&b=2b2b2b)
+
+### 通过 xpath 解析复杂 dom 节点
+
