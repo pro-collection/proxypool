@@ -35,3 +35,6 @@ config_secret.yaml
 
 ip.json
 source_ip.json
+
+*.log
+
