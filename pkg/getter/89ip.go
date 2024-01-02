@@ -8,6 +8,13 @@ import (
 	"unknwon.dev/clog/v2"
 )
 
+func closeReaderIO(body io.ReadCloser) {
+	err := body.Close()
+	if err != nil {
+		clog.Error("请求响应 close 错误： ", err)
+	}
+}
+
 func IP89() (result []*models.IP) {
 	clog.Info("开始爬取网站 89ip start")
 
@@ -27,12 +34,7 @@ func IP89() (result []*models.IP) {
 		return nil
 	}
 
-	defer func(Body io.ReadCloser) {
-		err := Body.Close()
-		if err != nil {
-			clog.Error("请求响应错误： ", err)
-		}
-	}(response.Body)
+	defer closeReaderIO(response.Body)
 
 	body, _ := io.ReadAll(response.Body)
 
