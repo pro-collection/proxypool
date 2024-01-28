@@ -29,6 +29,8 @@ func init() {
 }
 
 func main() {
-	getter.IP89()
+	//getter.IP89()
+	getter.IP3306()
+
 	defer log.Stop()
 }

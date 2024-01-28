@@ -58,16 +58,18 @@ golang 的优势我就不多说了。
 ```
 
 项目初始化就不做过多赘述， 日志系统使用 `clog`
+使用方式非常简单， 可以直接看官网介绍即可： https://github.com/go-clog/clog
+
 ```
 go get unknwon.dev/clog/v2
 ```
 
 项目启动的时候， 直接使用初始化日志即可：
+
 ```go
 package main
 
 import (
-	"proxypool/pkg/getter"
 	log "unknwon.dev/clog/v2"
 )
 
@@ -84,7 +86,7 @@ func init() {
 			FileRotationConfig: log.FileRotationConfig{
 				Rotate: true,
 				Daily:  true,
-				//MaxLines: 50,
+				// MaxLines: 50,
 			},
 		},
 	)
